@@ -19,6 +19,7 @@ while True:
         print('OPTIONS\n')
         for i in range(0, len(mt.formulas)):
             print(f'{i+1} - {mt.formulas[i]}')
+        print('0 - Back')
         operation_choice = int(input('\nWhat do you want to calculate? (use the index number) '))
         if operation_choice == 1:
             print('SUM'.center(55, '-'))
@@ -50,6 +51,42 @@ while True:
             print(f'Reesult: {div[0]}')
             print(f'Integer division: {div[1]}')
             print(f'Rest of division: {div[2]}')
+            time.sleep(1)
+        elif operation_choice == 5:
+            print('POWER'.center(55, '-'))
+            num1 = float(input('Base number: '))
+            num2 = float(input('Power: '))
+            result = mt.power(num1, num2)
+            print(f'\n{num1} powered to {num2} = {result}')
+            time.sleep(1)
+        elif operation_choice == 6:
+            print('SQUARE ROOT'.center(55, '-'))
+            num = int(input('Square root of: '))
+            result = mt.square_root(num)
+            print(f'\nThe square root of {num} = {result} ')
+            time.sleep(1)
+        elif operation_choice == 7:
+            print('CALCULATE AREA'.center(55))
+            print('-'*55)
+            print('''1 - SQUARE
+                \r2 - CIRCLE
+                \r3 - RETANGLE
+                \r4 - TRIANGLE
+                    ''')
+            figure = int(input('Figure choice: '))
+            if figure == 1:
+                base = float(input('Base: '))
+                height = float(input('Height: '))
+                result = mt.geometry(figure, base=base, height=height)
+                print(f'The area is {result}')
+            if figure == 2:
+                ray = float(input('Ray: '))
+                result = mt.geometry(figure, ray=ray)
+                print(f'The circle area is {result:.2f}')
+            if figure == 3:
+                mt.geometry()
+            if figure == 4:
+                mt.geometry()
             time.sleep(1)
     elif choice == 0:
         break
