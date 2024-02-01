@@ -75,18 +75,38 @@ while True:
                     ''')
             figure = int(input('Figure choice: '))
             if figure == 1:
-                base = float(input('Base: '))
-                height = float(input('Height: '))
-                result = mt.geometry(figure, base=base, height=height)
+                side = float(input('Side lengh: '))
+                result = mt.geometry(figure, side=side)
                 print(f'The area is {result}')
             if figure == 2:
                 ray = float(input('Ray: '))
                 result = mt.geometry(figure, ray=ray)
                 print(f'The circle area is {result:.2f}')
             if figure == 3:
-                mt.geometry()
+                width = float(input('Width: '))
+                height = float(input('Height: '))
+                result = mt.geometry(figure, width=width, height=height)
+                print(f'The retangle area is {result}')
             if figure == 4:
-                mt.geometry()
+                print('OPTIONS')
+                print('''1 - CALCULATE AREA
+                      \r2 - TYPE OF''')
+                option = int(input('What option? '))
+                if option == 1:
+                    base = float(input('Base lengh: '))
+                    height = float(input('Height lengh: '))
+                    result = mt.geometry(figure, base=base, height=height)
+                    print(f'The area of the triangle is {result}')
+                elif option == 2:
+                    side1 = float(input('First side lengh: ')) 
+                    side2 = float(input('Second side lengh: '))
+                    side3 = float(input('Third side lengh: '))
+                    if side1 == side2 and side2 == side3:
+                        print('An equilateral triangle')
+                    elif side1 != side2 and side1 != side3 and side2 != side3:
+                        print('A scalene triangle')
+                    else:
+                        print('An isosceles triangle')
             time.sleep(1)
     elif choice == 0:
         break

@@ -26,10 +26,14 @@ def square_root(a):
         if i * i == a:
             return i
 
-def geometry(n, base=None, height=None, ray=None):
+def geometry(n, side=None, base = None, width=None, height=None, ray=None):
     if n == 1:
-        return base * height
+        return side * side
     if n == 2:
         return math.pi * (ray**2)
+    if n == 3:
+        return width * height
+    if n == 4:
+        return (1/2) * base * height
 
     return True
