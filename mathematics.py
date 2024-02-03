@@ -1,7 +1,7 @@
 #Mathematircs calculations
 import math
 
-formulas = ['SUM', 'SUBTRACTION', 'MULTIPLICATION', 'DIVISION', 'POWER', 'SQUARE ROOT', 'GEOMETRY']
+formulas = ['SUM', 'SUBTRACTION', 'MULTIPLICATION', 'DIVISION', 'POWER', 'SQUARE ROOT', 'GEOMETRY', 'RULE OF THREE', 'MEASUREMENT CONVERSION']
 
 def soma(a,b):
     return a + b
@@ -36,4 +36,14 @@ def geometry(n, side=None, base = None, width=None, height=None, ray=None):
     if n == 4:
         return (1/2) * base * height
 
-    return True
+def rule_of_three(a, b):
+    return (b*100) / a
+
+def measurement_conversion(type_choice):
+    if type_choice == 1:
+        choice = str(input('Do you want to use meters, kilometers, miles or feets? ')).strip().upper()[0]
+        if choice == 'M':
+            value = float(input('Value in meters: '))
+            cm = value * 100
+            km = value / 1000
+            return value, cm, km
