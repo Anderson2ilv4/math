@@ -119,9 +119,8 @@ while True:
             print('-'*55)
             print('''1 - Measurement conversion(lengh)''')
             choice = int(input("What's your choice? "))
-            if choice == 1:
-                conversion = mt.measurement_conversion(choice)
-                print(f'{conversion[0]}m is equal to {conversion[1]}cm and {conversion[2]}km')
+            result = mt.measurement_conversion(choice)
+            print(result)
             time.sleep(1)
     elif choice == 0:
         break

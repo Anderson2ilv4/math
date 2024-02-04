@@ -40,10 +40,31 @@ def rule_of_three(a, b):
     return (b*100) / a
 
 def measurement_conversion(type_choice):
-    if type_choice == 1:
-        choice = str(input('Do you want to use meters, kilometers, miles or feets? ')).strip().upper()[0]
-        if choice == 'M':
-            value = float(input('Value in meters: '))
-            cm = value * 100
-            km = value / 1000
-            return value, cm, km
+        if type_choice == 1:
+            choice = str(input('Do you want to use meters, kilometers, miles or foot? ')).strip().upper()[0:2]
+            if choice == 'ME':
+                value = float(input('Value in meters: '))
+                cm = value * 100
+                km = value / 1000
+                return f'{value}m is equal {cm}cm and {km}km'
+            elif choice == 'KI':
+                value = float(input('Value in kilometers: '))
+                m = value * 1000
+                cm = m * 100
+                return f'{value}km is equal {cm}cm and {m}m'
+            elif choice == 'MI':
+                value = float(input('Value in miles: '))
+                km = value * 1.60934
+                m = km * 1000
+                #fix cm
+                cm = m * 100
+                #fix foot
+                ft = m * 0.3048
+                return f'{value}mi is equal {cm} cm, {m}m, {km}km and {ft}ft'
+            elif choice == 'FO':
+                value = float(input('Value in foot: '))
+                m = value * 0.3048 
+                km = m / 1000
+                cm = m * 100
+                mi = km / 1.60934
+                return f'{value}ft is equal {cm}cm, {m}m, {km}km and {mi}mi'
