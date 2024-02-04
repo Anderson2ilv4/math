@@ -73,12 +73,12 @@ def measurement_conversion(type_choice):
         elif type_choice == 2:
             choice = str(input('Do you want to use kilograms, tonnes or pounds? ')).strip().upper()[0]
             if choice == 'K':
-                value = float(input('Values in kilograms: '))
+                value = float(input('Value in kilograms: '))
                 to = value / 1000
                 lb = value * 2.20462
                 return f'{value}Kg is equal to {to}t and {lb}lb'
             elif choice == 'T':
-                value = float(input('Vlue in tonnes: '))
+                value = float(input('Value in tonnes: '))
                 kg = value * 1000
                 lb = value * 2204.62
                 return f'{value}t is equal to {kg}kg and {lb}lb'
@@ -87,3 +87,14 @@ def measurement_conversion(type_choice):
                 kg = value * 0.453592
                 to = value * 0.000453592
                 return f'{value}lb is equal to {kg:.4f}kg and {to:.4f}t'
+        elif type_choice == 3:
+            choice = str(input('Do you watn to use Celsius, Fahrenheit or Kelvin: ')).strip().upper()[0]
+            if choice == 'C':
+                value = float(input('Value in Celsius: '))
+                return f'{value}°C is equal to {(value * 9/5 + 32)}°F and {value + 273.15}K'
+            elif choice == 'F':
+                value = float(input('Value in Fahrenheit: '))
+                return f'{value}°F is equal to {(value - 32) * 5/9}°C and {(value - 32) * 5/9 + 273.15}K'
+            elif choice == 'K':
+                value = float(input('Value in Kelvin: '))
+                return f'{value}K is equal {value - 273.15}°C and {(value - 273.15) * 9/5 +32}°F'
