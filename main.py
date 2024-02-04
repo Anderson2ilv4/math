@@ -117,7 +117,8 @@ while True:
         elif operation_choice == 9:
             print('MEASUREMENT CONVERSION'.center(55))
             print('-'*55)
-            print('''1 - Measurement conversion(lengh)''')
+            print('''1 - Measurement conversion(Lengh)
+                  \r2 - Measurement conversion(Mass)''')
             choice = int(input("What's your choice? "))
             result = mt.measurement_conversion(choice)
             print(result)

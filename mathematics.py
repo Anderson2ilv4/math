@@ -46,20 +46,22 @@ def measurement_conversion(type_choice):
                 value = float(input('Value in meters: '))
                 cm = value * 100
                 km = value / 1000
-                return f'{value}m is equal {cm}cm and {km}km'
+                mi = value * 0.000621371
+                ft = value * 3.28084
+                return f'{value}m is equal {cm}cm, {km}km, {mi}mi and {ft}ft'
             elif choice == 'KI':
                 value = float(input('Value in kilometers: '))
                 m = value * 1000
                 cm = m * 100
-                return f'{value}km is equal {cm}cm and {m}m'
+                mi = value * 0.621371
+                ft = value * 3280.84
+                return f'{value}km is equal {cm}cm, {m}m, {mi}mi and {ft}ft'
             elif choice == 'MI':
                 value = float(input('Value in miles: '))
                 km = value * 1.60934
-                m = km * 1000
-                #fix cm
-                cm = m * 100
-                #fix foot
-                ft = m * 0.3048
+                m = value * 1609.34
+                cm = value * 160934
+                ft = value * 5280
                 return f'{value}mi is equal {cm} cm, {m}m, {km}km and {ft}ft'
             elif choice == 'FO':
                 value = float(input('Value in foot: '))
@@ -67,4 +69,21 @@ def measurement_conversion(type_choice):
                 km = m / 1000
                 cm = m * 100
                 mi = km / 1.60934
-                return f'{value}ft is equal {cm}cm, {m}m, {km}km and {mi}mi'
+                return f'{value}ft is equal {cm}cm, {m}m, {km}km and {mi:.7f}mi'
+        elif type_choice == 2:
+            choice = str(input('Do you want to use kilograms, tonnes or pounds? ')).strip().upper()[0]
+            if choice == 'K':
+                value = float(input('Values in kilograms: '))
+                to = value / 1000
+                lb = value * 2.20462
+                return f'{value}Kg is equal to {to}t and {lb}lb'
+            elif choice == 'T':
+                value = float(input('Vlue in tonnes: '))
+                kg = value * 1000
+                lb = value * 2204.62
+                return f'{value}t is equal to {kg}kg and {lb}lb'
+            elif choice == 'P':
+                value = float(input('Value in pounds: '))
+                kg = value * 0.453592
+                to = value * 0.000453592
+                return f'{value}lb is equal to {kg:.4f}kg and {to:.4f}t'
