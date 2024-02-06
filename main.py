@@ -1,4 +1,5 @@
 import mathematics as mt
+import health as ht
 import time
 
 print('='*55)
@@ -9,6 +10,7 @@ while True:
     print('CHOOSE SUBJECT'.center(55))
     print('-'*55)
     print('''1 - Math
+          \r2 - Health
           \r0 - Exit''')
     print('-'*55)
 
@@ -124,6 +126,12 @@ while True:
             result = mt.measurement_conversion(choice)
             print(result)
             time.sleep(1)
+    elif choice == 2:
+        height = float(input("What's your height in meters? "))
+        weight = float(input("What's your weight in kilograms? "))
+        age = int(input('Your age? '))
+        print(ht.health_care(height, weight, age))
+        time.sleep(1)
     elif choice == 0:
         break
     else:
